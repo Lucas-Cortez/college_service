@@ -7,7 +7,7 @@ class PasswordGenerator:
         self.preferredPassword = newpass
         return newpass
 
-    def generatePassword(self):
+    def generateNormalPassword(self):
         newpass = self.password + 1
         self.password = newpass
         return newpass
