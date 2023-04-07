@@ -1,7 +1,7 @@
 from abc import ABC, abstractclassmethod
 
 class Client(ABC):
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         # self.password = passwordGenerator.generatePassword()
         # self.isPreferred = isPreferred
@@ -10,7 +10,7 @@ class Client(ABC):
         # else:
         #     self.password = passwordGenerator.generatePassword()
         
-    @abstractclassmethod
-    def get_password(self):
-        pass
+    # @abstractclassmethod
+    # def get_password(self):
+    #     pass
 
