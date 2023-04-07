@@ -52,6 +52,14 @@ class ServiceSystem():
         elif service_type == PREFERRED and len(self.preferredBalconys) > 1:
             self.preferredBalconys.pop()
 
+    # def serve_client(self):
+    def run_system(self):
+        for balc in self.normalBalconys:
+            balc.served_time 
 
-def exec_routine():
+
+        
+
+
+# def exec_routine():
     

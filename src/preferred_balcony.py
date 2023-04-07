@@ -1,14 +1,9 @@
 from balcony import Balcony
+from queue import Queue
 
 class PreferredBalcony(Balcony):
-    start_service_time = None
-
-    def __init__(self):
-        super().__init__()
-
-    def test():
-        print('teste')
-
-    def get_next_client(self):
-        # return super().get_next_client()
-        print('abstract')
+    def next_client(self, preferredQueue: Queue, normalQueue: Queue):
+        if not preferredQueue.empty():
+            self._next_client(preferredQueue.get())
+        elif not normalQueue.empty():
+            self._next_client(normalQueue.get())

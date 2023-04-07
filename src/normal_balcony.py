@@ -1,13 +1,9 @@
 from balcony import Balcony
-from datetime import datetime
-from normal_client import NormalClient
-from utils.get_time_now import get_time_now
+from queue import Queue
 
 class NormalBalcony(Balcony):
-    start_service_time = None
-    client_served = None
-
-    def next_client(self, client: NormalClient):
-        self.start_service_time = get_time_now()
-        client.answered()
-        self.client_served = client
+    def next_client(self, normalQueue: Queue, preferredQueue: Queue):
+        if not normalQueue.empty():
+            self._next_client(normalQueue.get())
+        elif not preferredQueue.empty():
+            self._next_client(preferredQueue.get())
