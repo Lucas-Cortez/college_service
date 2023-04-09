@@ -1,65 +1,20 @@
-from balcony import Balcony
+from utils.set_interval import Interval
+from service_system import ServiceSystem
 from password_generator import PasswordGenerator
-from datetime import datetime
-from random import randint
-from queue import Queue
 
-from preferred_balcony import PreferredBalcony
-from normal_balcony import NormalBalcony
+password_generator = PasswordGenerator()
 
-from preferred_client import PreferredClient
-from normal_client import NormalClient
+service = ServiceSystem(password_generator)
 
-NORMAL = 'normal'
-PREFERRED = 'preferencial'
-
-passwordGenerator = PasswordGenerator()
-
-
-def generate_random_wait_time(a, b):
-    return randint(a, b)
-
-def rand():
-    return generate_random_wait_time(0, 30)
+service.new_client('Joao', 'normal')
+service.new_client('Diego', 'normal')
+service.new_client('Heduardo', 'preferencial')
+service.new_client('Daniel', 'preferencial')
+service.new_client('Adrian', 'normal')
+service.new_client('Gabriel', 'normal')
+service.new_client('Gustavo', 'normal')
+service.new_client('Lucas', 'preferencial')
+service.new_client('Matheus', 'preferencial')
 
 
-class ServiceSystem():
-    def __init__(self):
-        self.normalBalconys = [NormalBalcony(), NormalBalcony(), NormalBalcony()]
-        self.preferredBalconys = [PreferredBalcony(), PreferredBalcony()]
-        self.normalQueue = Queue(maxsize=100)
-        self.preferredQueue = Queue(maxsize=100)
-
-    def new_client(self, name: str, service_type: str):
-        if service_type == NORMAL:
-            password = passwordGenerator.generateNormalPassword()
-            client = NormalClient(name, password)
-            self.normalQueue.put({ 'client': client, 'wait_time': rand() })
-        elif service_type == PREFERRED:
-            password = passwordGenerator.generatePreferredPassword()
-            client = PreferredClient(name, password)
-            self.preferredQueue.put({ 'client': client, 'wait_time': rand() })
-
-    def open_balcony(self, service_type: str):
-        if service_type == NORMAL and len(self.normalBalconys) < 5:
-            self.normalBalconys.append(NormalBalcony())
-        elif service_type == PREFERRED and len(self.preferredBalconys) < 2:
-            self.preferredBalconys.append(PreferredBalcony())
-
-    def close_balcony(self, service_type: str):
-        if service_type == NORMAL and len(self.normalBalconys) > 1:
-            self.normalBalconys.pop()
-        elif service_type == PREFERRED and len(self.preferredBalconys) > 1:
-            self.preferredBalconys.pop()
-
-    # def serve_client(self):
-    def run_system(self):
-        for balc in self.normalBalconys:
-            balc.served_time 
-
-
-        
-
-
-# def exec_routine():
-    
+Interval.infinite(service.exec_routine, 0.1)

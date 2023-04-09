@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
+
 from utils.get_time_now import get_time_now
 
 class Client(ABC):
     def __init__(self, name: str, password: int):
+        self.name = name
         self.password = password
         self.arrivalTime = get_time_now()
         self.serviceTime = None

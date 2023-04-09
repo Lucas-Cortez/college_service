@@ -1,0 +1,25 @@
+INICIO DO LOG ========================================
+Cliente Joao entrou na fila NORMAL com a senha 1
+Cliente Diego entrou na fila NORMAL com a senha 2
+Cliente Heduardo entrou na fila PREFERENCIAL com a senha 1
+Cliente Daniel entrou na fila PREFERENCIAL com a senha 2
+Cliente Adrian entrou na fila NORMAL com a senha 3
+Cliente Gabriel entrou na fila NORMAL com a senha 4
+Cliente Gustavo entrou na fila NORMAL com a senha 5
+Cliente Lucas entrou na fila PREFERENCIAL com a senha 3
+Cliente Matheus entrou na fila PREFERENCIAL com a senha 4
+Caixa balcao 9123 normal solicitando cliente da fila normal Joao
+Caixa balcao 8912 normal solicitando cliente da fila normal Diego
+Caixa balcao 6718 normal solicitando cliente da fila normal Adrian
+Caixa balcao 2138 preferencial solicitando cliente da fila preferencial Heduardo
+Caixa balcao 9287 preferencial solicitando cliente da fila preferencial Daniel
+Caixa balcao 8912 normal solicitando cliente da fila normal Gabriel
+Caixa balcao 2138 preferencial solicitando cliente da fila preferencial Lucas
+Caixa balcao 9287 preferencial solicitando cliente da fila preferencial Matheus
+Caixa balcao 9287 preferencial solicitando cliente da fila preferencial Gustavo
+Solicitando o fechamento do caixa preferencial balcao 9287
+Solicitando o fechamento do caixa normal balcao 9123
+Solicitando o fechamento do caixa normal balcao 8912
+Solicitando o fechamento do caixa normal balcao 6718
+Solicitando o fechamento do caixa preferencial balcao 2138
+FIM DO LOG ========================================
