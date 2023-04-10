@@ -2,8 +2,6 @@ from datetime import datetime
 from queue import Queue
 from random import randint
 
-# Definindo as classes
-
 class Cliente:
     def __init__(self, nome, tipo_atendimento):
         self.nome = nome
@@ -124,10 +122,8 @@ class SistemaAtendimento:
             print("Nenhum cliente foi atendido.")
 
 
-# Criando um sistema de atendimento com filas de tamanho 10 e 5
 sistema_atendimento = SistemaAtendimento(10, 5)
 
-# Gerando algumas senhas numéricas
 print(sistema_atendimento.gerar_senha_numerica("normal"))
 print(sistema_atendimento.gerar_senha_numerica("normal"))
 print(sistema_atendimento.gerar_senha_numerica("preferencial"))
@@ -138,11 +134,8 @@ print(sistema_atendimento.gerar_senha_numerica("normal"))
 print(sistema_atendimento.gerar_senha_numerica("normal"))
 print(sistema_atendimento.gerar_senha_numerica("normal"))
 
-# Abrindo um novo caixa normal
 sistema_atendimento.abrir_caixa("normal")
 
-# Atendendo clientes por 60 minutos
 sistema_atendimento.atender_clientes(60)
 
-# Exibindo as estatísticas de atendimento
 sistema_atendimento.exibir_estatisticas()

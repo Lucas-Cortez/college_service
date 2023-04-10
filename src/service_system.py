@@ -18,7 +18,7 @@ from utils.logger import Logger
 NORMAL = 'normal'
 PREFERRED = 'preferencial'
 
-MAX_WAIT_TIME = 1
+MAX_WAIT_TIME = 1 # PODE SER ALTERADO PARA 15 COMO PEDIDO NO EXERCICIO
 
 def rand():
     return str(randint(1000, 9999))
@@ -51,10 +51,16 @@ class ServiceSystem():
             balcony = NormalBalcony(rand())
             self.normalBalconys.append(balcony)
             self.logger.log(f'Novo caixa NORMAL [{balcony.tag}] aberto')
-        elif service_type == PREFERRED and len(self.preferredBalconys) < 2:
+        else:
+            self.logger.log(f'Limite de 5 caixas normais atingido')
+
+        if service_type == PREFERRED and len(self.preferredBalconys) < 2:
             balcony = PreferredBalcony(rand())
             self.preferredBalconys.append(balcony)
             self.logger.log(f'Novo caixa PREFERENCIAL [{balcony.tag}] aberto')
+        else:
+            self.logger.log(f'Limite de 2 caixas preferenciais atingido')
+
 
     def __close_system(self):
         self.logger.log(f"FIM DO LOG {40 * '='}")
@@ -73,6 +79,7 @@ class ServiceSystem():
 
         for i in sorted(indexes_to_remove, reverse=True):
             if len(balconys) > 1:
+                self.logger.log(f'Caixa {balconys[i].tag} fechado')
                 balconys.pop(i)
 
 
