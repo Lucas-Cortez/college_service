@@ -1,6 +1,12 @@
-from utils.set_interval import Interval
+from utils.set_interval import SetInterval
 from service_system import ServiceSystem
 from password_generator import PasswordGenerator
+
+# Daniel Carlos de Siqueira Santos - RA: 109681
+# Gabriel Tadeu Geromel - RA: 108818
+# Gustavo Henrique Vitor - RA: 108837
+# Heduardo Gabriel Costa - RA: 109439
+# Lucas Cortez Sanches - RA: 110434
 
 if __name__ == '__main__':
     password_generator = PasswordGenerator()
@@ -18,4 +24,4 @@ if __name__ == '__main__':
     service.new_client('Matheus', 'preferencial')
 
 
-    Interval.infinite(service.exec_routine, 1)
+    SetInterval.infinite(service.exec_routine, 1)

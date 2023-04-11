@@ -1,6 +1,6 @@
 import threading
 
-class Interval:
+class SetInterval:
     def infinite(func, sec: float):
         e = threading.Event()
         while True:

@@ -18,7 +18,3 @@ class Client(ABC):
     def answered(self):
         self.serviceTime = get_time_now()
 
-    @abstractmethod
-    def log_client(self):
-        pass
-
